@@ -1,0 +1,29 @@
+.p-movie-detail {
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.p-movie-detail__content {
+    border-radius: 2rem;
+    background-color: rgba(128, 128, 128, 0.5);
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.p-movie-detail__content img {
+    border-radius: 2rem;
+    object-fit: contain;
+}
+
+.p-movie-detail__info {
+    color: #FFFFFF;
+    text-shadow: 2px 2px 0 #111111, 2px -2px 0 #111111, -2px 2px 0 #111111, -2px -2px 0 #111111, 2px 0px 0 #111111, 0px 2px 0 #111111, -2px 0px 0 #111111, 0px -2px 0 #111111;
+    overflow-y: hidden;
+}

@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ movie.title }}{% endblock %}
+
+{% block stylesheets %}
+    <link href="{{ asset('styles/movieDetailPage.css') }}" type="text/css" rel="stylesheet"/>
+{% endblock %}
+
+{% block body %}
+    <div class="p-movie-detail"
+         style="background-image: url('https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces{{ movie.backdrop_path }}')">
+        <div class="p-movie-detail__content">
+            <div class="row">
+                <img class="col-md-6 col-12"
+                     src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2{{ movie.poster_path }}"
+                     alt="{{ movie.title }}"/>
+                <div class="col-md-6 col-12">
+                    <div class="p-movie-detail__info">
+                        <h1>{{ movie.title }}</h1>
+                        {% if movie.belongs_to_collection != null %}<h2>Parte
+                            de {{ movie.belongs_to_collection.name }}</h2>{% endif %}
+                        <h2>Géneros:</h2>
+                        <ul>
+                            {% for genre in movie.genres %}
+                                <li>{{ genre.name }}</li>
+                            {% endfor %}
+                        </ul>
+                        {% if movie.homepage != null %}<a href="{{ movie.homepage }}">Página web</a>{% endif %}
+                        {# <p>{{ movie.overview }}</p> #}
+                        {% if movie.tagline != null %}<em>"{{ movie.tagline }}"</em>{% endif %}
+                        <h1>{{ movie.vote_average }} / 10</h1>
+                        <h2>Igual te interesan:</h2>
+                        <ul>
+                            {% for recommendation in recommendations %}
+                                <li><a href="{{ path('movieDetailPage', {id: recommendation.id}) }}">{{ recommendation.title }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

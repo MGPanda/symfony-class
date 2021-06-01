@@ -1,0 +1,14 @@
+.p-movie-form {
+    width: 100vw;
+    height: 100vh;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.p-movie-form input {
+    border-radius: 2rem;
+    padding-left: 1rem;
+}
